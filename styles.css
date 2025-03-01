@@ -1,0 +1,131 @@
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .magazine-cover {
+      width: 400px;
+      height: 650px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), 
+                  url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac') center/cover no-repeat;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .magazine-cover:hover {
+      transform: scale(1.05);
+    }
+
+    .magazine-cover::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 18px;
+      z-index: 2;
+    }
+
+    .magazine-cover::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 4px;
+      background-color: #ff9500;
+      z-index: 2;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .header {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      background: rgba(255, 149, 0, 0.85);
+      padding: 8px 14px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      letter-spacing: 2px;
+      z-index: 3;
+    }
+
+    .feature-title {
+      position: absolute;
+      top: 100px;
+      left: 20px;
+      right: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #facc15;
+      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 3;
+    }
+
+    .feature-description {
+      position: absolute;
+      bottom: 90px;
+      left: 20px;
+      right: 20px;
+      font-size: 1rem;
+      color: #e2e8f0;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 14px;
+      border-radius: 12px;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.6;
+      z-index: 3;
+    }
+
+    .headline {
+      position: absolute;
+      bottom: 260px;
+      left: 20px;
+      font-size: 1.3rem;
+      color: white;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 6px 12px;
+      border-radius: 6px;
+      z-index: 3;
+    }
+
+    @media (max-width: 480px) {
+      .magazine-cover {
+        width: 320px;
+        height: 520px;
+      }
+
+      .feature-title {
+        font-size: 2rem;
+      }
+
+      .feature-description {
+        font-size: 0.9rem;
+      }
+    }
